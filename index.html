@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Numérico</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="./verification.png">
+</head>
+
+<body>
+    
+
+
+<div class="conateiner">
+
+    <header class="header">
+        <img src="./123.png">
+        <h1><span>Conversor </span><br>de Bases Numéricas</h1>
+    </header>
+    
+
+    <div class="main">
+    <form>
+
+<!--Select para escolher o tipo de base-->
+        <label for="tipos_bases">Selecione uma base: </label>
+        <select id="tipos_bases" onchange="habi_desabi(this.value)">
+            <option value="0" selected>--</option>
+            <option value="10">Decimal</option>
+            <option value="2">Binário</option>
+            <option value="8">Octal</option>
+            <option value="16">Hexadecimal</option>
+        </select>
+
+        <!--Entrada para valor decimal-->
+        <label for="ipt_decimal">Decimal: </label>
+        <input type="text" id="ipt_decimal" onkeypress="return type_decimal(event);" disabled />
+    
+        <!--Entrada para valor binário-->
+        <label for="ipt_binario">Binário: </label>
+        <input type="text" id="ipt_binario" onkeypress="return type_binario(event);" disabled >
+        
+         <!--Entrada para valor octal-->
+         <label for="ipt_octal">Octal: </label>
+         <input type="text" id="ipt_octal" onkeypress="return type_octal(event);" disabled >
+   
+        <!--Entrada para valor hexadecimal-->
+        <label for="ipt_hexadecimal">Hexadecimal: </label>
+        <input type="text" id="ipt_hexadecimal" onkeypress="return type_hexadecimal(event);" disabled >
+        
+        <!--Botões-->
+            <div class="container-btn">
+                <button type="button" onclick="chamar_calculo();">Converter</button>
+                <input type="reset" value="Limpar" onclick="habi_desabi()">
+            </div>
+    </form>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
